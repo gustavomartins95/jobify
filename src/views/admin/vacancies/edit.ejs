@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jobify - Edit vacancy</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <%- include('../header') %>
+  <h2 class="subtitle">Edit Vacancy <a href="/admin/vacancies">vacancies</a></h2>
+  <div class="container">
+    <div class="container-form">
+      <form method="post" action="/admin/vacancy/edit">
+        <input type="hidden" name="id" id="id" value="<%= vacancy.id %>" />
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input type="text" name="title" id="name" value="<%= vacancy.title %>" />
+        </div>
+        <div class="form-group">
+          <label for="description">Description</label>
+          <textarea name="description" id="description" cols="" rows="10"><%= vacancy.description %></textarea>
+        </div>
+        <div class="form-group">
+          <label for="categories">Categories</label>
+          <select name="category" id="categories">
+            <% categories.forEach(category => { %>
+            <option value="<%= category.id %>" <% if(category.id === vacancy.categories_id) { %> selected <% } %>>
+              <%= category.title %>
+            </option>
+            <% }) %>
+          </select>
+        </div>
+        <input type="submit" value="save">
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>

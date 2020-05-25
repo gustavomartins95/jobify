@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jobify - Vacancy</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <%- include('header') %>
+  <h2 class="subtitle"><%- category.title %> <a href="/">back</a></h2>
+  <div class="container">
+    <h3><%- vacancy.title %></h3>
+    <p><%- vacancy.description %></p>
+  </div>
+</body>
+
+</html>

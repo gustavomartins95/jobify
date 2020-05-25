@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jobify - Categories</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="stylesheet" href="/css/sweetalert2.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <%- include('../header') %>
+  <h2 class="subtitle">Categories <a href="/admin/category">new category</a></h2>
+  <div class="container">
+    <table>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% categories.forEach(category => { %>
+        <tr>
+          <td><%- category.title %></td>
+          <td>
+            <a href="/admin/category/edit/<%- category.id %>">EDIT</a>
+            <a class="pointer" onclick="confirmDelete('<%- category.id %>')">DELETE</a>
+          </td>
+        </tr>
+        <% }) %>
+        <% if(!categories.length) { %>
+        <tr class="empty-result">
+          <td>No categories found :c</td>
+        </tr>
+        <% } %>
+      </tbody>
+    </table>
+  </div>
+
+  <script src="/js/sweetalert2.min.js"></script>
+  <script>
+    function confirmDelete(id) {
+      Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#C82333',
+        cancelButtonColor: '#23272B',
+        confirmButtonText: 'Yes, delete it!'
+      }).then((result) => {
+        if (result.value) {
+          window.location.href = `/admin/category/delete/${id}`;
+        }
+      })
+    }
+  </script>
+</body>
+
+</html>

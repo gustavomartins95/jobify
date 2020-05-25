@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jobify</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <%- include('header') %>
+  <h2 class="subtitle">Open roles</h2>
+  <div class="container">
+    <% if(!result.length) { %>
+    <h3>No categories found :c</h3>
+    <% } %>
+  </div>
+  <% result.forEach((category) => { %>
+  <div class="container vacancies-items">
+    <h3><%- category.title %></h3>
+    <ul>
+      <% if(!category.vacancies.length) { %>
+      <li>No vacancies found :c</li>
+      <% } %>
+      <% category.vacancies.forEach((vacancy) => { %>
+      <li>
+        <a href="/vacancy/<%- vacancy.id %>"><%- vacancy.title %></a>
+      </li>
+      <% }) %>
+    </ul>
+  </div>
+  <% }) %>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jobify - New category</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <%- include('../header') %>
+  <h2 class="subtitle">New Category <a href="/admin/categories">categories</a></h2>
+  <div class="container">
+    <div class="container-form">
+      <form method="post" action="/admin/category">
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input type="text" name="title" id="name" />
+        </div>
+        <input type="submit" value="save">
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>
