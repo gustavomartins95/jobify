@@ -9,6 +9,8 @@
 ![Screenshot](https://nctech.net.br/screenshots/jobify/home.gif)
 ![Screenshot](https://nctech.net.br/screenshots/jobify/categories.gif)
 ![Screenshot](https://nctech.net.br/screenshots/jobify/vacancies.gif)
+![Screenshot](https://nctech.net.br/screenshots/jobify/security.png)
+**BLOCK ACCESS /ADMIN**
 
 ## Technologies
 
@@ -34,3 +36,9 @@ $ npm run start
 ```
 
 To view the project you can open http://localhost:3000.
+
+---
+
+Made by Gustavo Martins
+
+[Linkedin](https://www.linkedin.com/in/guuhenriquue/)
